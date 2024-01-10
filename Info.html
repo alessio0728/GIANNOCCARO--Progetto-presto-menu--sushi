@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFO & INFORMAZIONI</title>
+
+    <link rel="stylesheet" href="info stile.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+
+<body background="gif arigato1.gif">
+
+    <!--barra di navigazione-->
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid" style="background-image: url(gif\ arigato1.gif);">
+            <a class="navbar-brand" href="#">
+                <img src="drago 1.gif" alt="Logo" width="200px" height="200px" class="d-inline-block align-text-center"
+                    style="border-radius: 30px;">
+
+                <span style=" margin-right: 10px;" class="scrittalogo">
+
+
+                    <button id="abbonamenti" class="abbonamenti">ABBONAMENTI</button>
+
+
+                    <!--IL TITOTOLO STA TRA DUE SPAN-->DRAGON SUSHI
+
+                    <button id="home" class="info">HOME</button></span>
+            </a>
+
+            <div style="flex-direction: row;">
+                <select class="form-select" aria-label="Default select example" id="languageSelect"
+                    onchange="saveLanguage()">
+                    <option selected>SELEZIONARE LINGUA </option>
+                    <option value="1" onclick="changePage('http://127.0.0.1:5500/men%C3%B9%20sushi.html')">ITALIANO
+                    </option>
+                    <option value="2" onclick="changePage('http://127.0.0.1:5500/men%C3%B9%20sushi.html')">INGLESE
+                    </option>
+                    <option value="3" onclick="changePage('http://127.0.0.1:5500/men%C3%B9%20sushi.html')">GIAPPONESE
+                    </option>
+                </select>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!--PARTE CENTRALE-->
+
+    <div class="principale">
+
+        <div class="sopra">
+
+            <legend class="leggenda">INFORMAZIONI</legend>
+
+            <fieldset class="contenuto">
+
+
+                <p>NOME : DRAGON SUSHI</p>
+                <p>PARTITA IVA : AA123456</p>
+                <P>INDIRIZZO : VIA DRAGO 3</P>
+                <P>CITTÀ : FANTASIA</P>
+                <p>SOCIAL: FACEBOOK ; ISTAGRAM ; YOUTUBE</p>
+
+
+            </fieldset>
+
+        </div>
+
+        <div class="sotto">
+
+            <legend class="leggenda">VISUALIZZA QR</legend>
+
+            <fieldset class="contenuto2">
+
+                <img src="QR.png" alt="QR">
+
+            </fieldset>
+            
+            <button class="stampa"  onclick="stampa()">STAMPA</button>
+
+        </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="info javascript.js"></script>
+</body>
+
+</html>

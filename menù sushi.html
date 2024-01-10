@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menù sushi </title>
+
+    <link rel="stylesheet" href="stile menù sushi.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body class="corpo" background="gif arigato1.gif">
+
+    <!--barra di navigazione-->
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid" style="background-image: url(gif\ arigato1.gif);">
+            <a class="navbar-brand" href="#">
+                <img src="drago 1.gif" alt="Logo" width="200px" height="200px" class="d-inline-block align-text-center"
+                    style="border-radius: 30px;">
+
+                <span style=" margin-right: 10px;" class="scrittalogo">
+
+
+                    <button id="abbonamenti" class="abbonamenti">ABBONAMENTI</button>
+
+
+                    <!--IL TITOTOLO STA TRA DUE SPAN-->DRAGON SUSHI
+
+                    <button id="info" class="info">INFO & VIDEO TUTORIAL</button></span>
+            </a>
+
+            <div style="flex-direction: row;">
+                <select class="form-select" aria-label="Default select example" id="languageSelect"
+                    onchange="saveLanguage()">
+                    <option selected>SELEZIONARE LINGUA </option>
+                    <option value="1" onclick="changePage('http://127.0.0.1:5500/men%C3%B9%20sushi.html')">ITALIANO
+                    </option>
+                    <option value="2" onclick="changePage('http://127.0.0.1:5500/men%C3%B9%20sushi.html')">INGLESE
+                    </option>
+                    <option value="3" onclick="changePage('http://127.0.0.1:5500/men%C3%B9%20sushi.html')">GIAPPONESE
+                    </option>
+                </select>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!--PARTE CENTRALE-->
+
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-4">
+            <div id="list-example" class="list-group" style="position: fixed; width: 500px;">
+                <a class="list-group-item list-group-item-action" href="#list-item-1"
+                    style="background-color: #FF6C22;">RAVIOLI</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-2"
+                    style="background-color: aqua;">NIGIRI</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-3"
+                    style="background-color: burlywood;">GUNKAM</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-4"
+                    style="background-color: cadetblue;">BARCHE</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-5"
+                    style="background-color: #E26EE5;">RAMEN</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-6"
+                    style="background-color: #FFA732;">DOLCI</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-7"
+                    style="background-color: #A6CF98;">BEVANDE</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-8"
+                    style="background-color: #362FD9;">TOTALE</a>
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                class="scrollspy-example" tabindex="0">
+
+                <!--RAVIOLI-->
+
+
+                <h4 class="testocentrale" id="list-item-1">RAVIOLI</h4>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                    <div class="col">
+
+                        <div id="mycard" class="card h-100" onmouseover="enlargeCard(this)"
+                            onmouseout="shrinkCard(this)" onclick="addToCart(this)" data-index="1">
+
+                            <img src="antipasti 1.webp" class="card-img-top" alt="antipast">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">1 Ravioli di verdure 3pz</h5>
+
+                                <p class="card-text">Ravioli di pasta di riso e spinaci ripieni di verdure € 5,00</p>
+
+
+                            </div>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col">
+
+                        <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                            onclick="addToCart(stop)" data-index="1" onmousedown="mouseDown()" onmouseup="mouseUp()">
+
+                            <img src="antipasti 2.webp" class="card-img-top" alt="antipasti">
+                            <div class="card-body">
+
+                                <h5 class="card-title">2 Ravioli di calamari 3pz</h5>
+
+                                <p class="card-text">Sfoglia con nero di seppia € 5,00</p>
+
+                            </div>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary"
+                                    onclick="addToCart(this)">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary" onclick="decrementCounter(this)"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+
+                        <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                            onclick="addToCart(this)" data-index="1">
+
+                            <img src="antipasti 3.webp" class="card-img-top" alt="antipasti">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">3 Ravioli di totano 3pz</h5>
+
+                                <p class="card-text">Ravioli con polpa di totano
+                                    € 5,00</p>
+
+                            </div>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col">
+
+                        <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                            onclick="addToCart(this)" data-index="1">
+
+                            <img src="antipasti 4.webp" class="card-img-top" alt="antipasti">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">4 Ravioli di manzo 3pz</h5>
+
+                                <p class="card-text">Ravioli di pasta di riso e barbabietola ripieni di manzo
+                                    € 5,00</p>
+
+                                <div class="counter-container" style="padding-bottom: 30px;">
+
+                                    <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL
+                                        CARELLO</p>
+
+                                    <a style="margin-left: 30px;" class="btn btn-primary"
+                                        onclick="decrementCounter(this)">-</a>
+
+                                    <span class="counter">0</span>
+
+                                    <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col">
+
+                        <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                            onclick="addToCart(this)" data-index="1">
+
+                            <img src="antipasti 5.webp" class="card-img-top" alt="antipasti">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">5 Ravioli di carne 3pz</h5>
+
+                                <p class="card-text">
+                                    Ravioli con carne e verdure
+                                    € 5,00</p>
+
+                                <div class="counter-container" style="padding-bottom: 30px;">
+
+                                    <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL
+                                        CARELLO</p>
+
+                                    <a style="margin-left: 30px;" class="btn btn-primary"
+                                        onclick="decrementCounter(this)">-</a>
+
+                                    <span class="counter">0</span>
+
+                                    <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+
+                        <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                            onclick="addToCart(this)" data-index="1">
+
+                            <img src="antipasti 6.webp" class="card-img-top" alt="antipasti">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">6 Shaomai 3pz</h5>
+
+                                <p class="card-text">Ravioli con gamberi, carne, verdure e lardo
+                                    € 6,00</p>
+
+                                <div class="counter-container" style="padding-bottom: 30px;">
+
+                                    <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL
+                                        CARELLO</p>
+
+                                    <a style="margin-left: 30px;" class="btn btn-primary"
+                                        onclick="decrementCounter(this)">-</a>
+
+                                    <span class="counter">0</span>
+
+                                    <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+
+                        <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                            onclick="addToCart(this)" data-index="1">
+
+                            <img src="antipasti 7.webp" class="card-img-top" alt="antipasti">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">7 Ravioli di carne alla griglia 3pz</h5>
+
+                                <p class="card-text">Ravioli di pasta di riso ripieni di manzo
+                                    € 5,00</p>
+
+                                <div class="counter-container" style="padding-bottom: 30px;">
+
+                                    <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL
+                                        CARELLO</p>
+
+                                    <a style="margin-left: 30px;" class="btn btn-primary"
+                                        onclick="decrementCounter(this)">-</a>
+
+                                    <span class="counter">0</span>
+
+                                    <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+
+                        <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                            onclick="addToCart(this)" data-index="1">
+
+                            <img src="antipasti 8.webp" class="card-img-top" alt="antipasti">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">8 Ravioli fritti 6pz</h5>
+
+                                <p class="card-text">Ravioli fritti di carne
+                                    € 5,00</p>
+
+                                <div class="counter-container" style="padding-bottom: 30px;">
+
+                                    <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL
+                                        CARELLO</p>
+
+                                    <a style="margin-left: 30px;" class="btn btn-primary"
+                                        onclick="decrementCounter(this)">-</a>
+
+                                    <span class="counter">0</span>
+
+                                    <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+
+                        <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                            onclick="addToCart(this)" data-index="1">
+
+                            <img src="antipasti 9.webp" class="card-img-top" alt="antipasti">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">9 Involtini primavera 4pz</h5>
+
+                                <p class="card-text">Involtino di pasta sfoglia alle verdure
+                                    € 3,00</p>
+
+                                <div class="counter-container" style="padding-bottom: 30px;">
+
+                                    <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL
+                                        CARELLO</p>
+
+                                    <a style="margin-left: 30px;" class="btn btn-primary"
+                                        onclick="decrementCounter(this)">-</a>
+
+                                    <span class="counter">0</span>
+
+                                    <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="antipasti 10.webp" class="card-img-top" alt="antipasti">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">10 Latte pane 2pz</h5>
+
+                            <p class="card-text">Pane al vapore con latte condensato
+                                € 4,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!--sezione due nigiri-->
+
+            <h4 class="testocentrale" id="list-item-2">NIGIRI 2 PZ</h4>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="nigiri 11.webp" class="card-img-top" alt="nigiri">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">11 Sake </h5>
+
+                            <p class="card-text"> Nighiri di salmone
+                                € 3,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+                        <img src="nigiri 12.webp" class="card-img-top" alt="nigiri">
+                        <div class="card-body">
+
+                            <h5 class="card-title">12 tuna</h5>
+
+                            <p class="card-text"> Nighiri di tonno
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="nigiri 13.webp" class="card-img-top" alt="nigiri">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">13 Suzuki </h5>
+
+                            <p class="card-text"> Nighiri di branzino
+                                € 3,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="nigiri 14.webp" class="card-img-top" alt="nigiri">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">14 Tai </h5>
+
+                            <p class="card-text"> Nighiri di ricciola
+                                € 3,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="nigiri 15.webp" class="card-img-top" alt="nigiri">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">15 Amaebi </h5>
+
+                            <p class="card-text">
+                                Nighiri di gambero rosso crudo
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="nigiri 16.webp" class="card-img-top" alt="nigiri">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">16 Ebi </h5>
+
+                            <p class="card-text"> Nighiri di gambero cotto
+                                € 3,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="nigiri 17.webp" class="card-img-top" alt="nigiri">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">17 Tako </h5>
+
+                            <p class="card-text"> Nighiri di polipo
+                                € 3,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="nigiri 18.webp" class="card-img-top" alt="nigiri">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">18 Avocado</h5>
+
+                            <p class="card-text">Nighiri di avocado
+                                € 3,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="nigiri 19.webp" class="card-img-top" alt="nigiri">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">19 Sake fiamma </h5>
+
+                            <p class="card-text"> Salmone scottato, formaggio con salsa anguilla
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                    onclick="addToCart(this)" data-index="1">
+
+                    <img src="nigiri 20.webp" class="card-img-top" alt="nigiri">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">20 Sake fiamma </h5>
+
+                        <p class="card-text"> Salmone scottato, formaggio con salsa anguilla
+                            € 4,00 </p>
+
+                        <div class="counter-container" style="padding-bottom: 30px;">
+
+                            <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                            <a style="margin-left: 30px;" class="btn btn-primary" onclick="decrementCounter(this)">-</a>
+
+                            <span class="counter">0</span>
+
+                            <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <!--GUNKAN SEZIONE 3-->
+
+
+            <h4 class="testocentrale" id="list-item-3">GUNKAM PZ2</h4>
+
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="gunkan 22.webp" class="card-img-top" alt="gunkan">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">21 Tobiko </h5>
+
+                            <p class="card-text"> Uova di pesce volante e alghe all’esterno
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="gunkan 23.webp" class="card-img-top" alt="gunkam">
+                        <div class="card-body">
+
+                            <h5 class="card-title">23 Spicy salmone </h5>
+
+                            <p class="card-text"> Salmone tritato,tabasco e alghe all’esterno
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="gunkan 24.webp" class="card-img-top" alt="gunkam">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">24 Spicy tonno </h5>
+
+                            <p class="card-text"> Tonno tritato, tabasco e alghe all’esterno
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="gunkan 25.webp" class="card-img-top" alt="gunkam">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">25 Spicy granchio </h5>
+
+                            <p class="card-text"> Polpa di granchio, tabasco e alghe all’esterno
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="gunkan 26.webp" class="card-img-top" alt="gunkam">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">26 Alghe verde </h5>
+
+                            <p class="card-text">
+                                Alghe agropiccanti e alghe all’esterno
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="gunkan 27.webp" class="card-img-top" alt="gunkam">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">27 Sake philadelphia </h5>
+
+                            <p class="card-text"> Salmone all’esterno con philadelphia
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="gunkan 28.webp" class="card-img-top" alt="gunkam">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">28 Sake ikura </h5>
+
+                            <p class="card-text"> Uova di salmone con salmone all’esterno
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="gunkan 29.webp" class="card-img-top" alt="gunkam">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">29 Gunkan fiamma</h5>
+
+                            <p class="card-text"> Gunkan slamone scottato con formaggio, salsa teriyaki e croccante di
+                                patate
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="gunkan 30.webp" class="card-img-top" alt="gunkam">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">30 Zucchine </h5>
+
+                            <p class="card-text"> Gambero cotto, philadelphia con zucchine all’esterno
+                                € 4,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--PUNTO DI DIVISIONE-->
+            </div>
+
+
+            <!--SEZIONE QUATTRO BARCHE-->
+
+            <h4 class="testocentrale" id="list-item-4">BARCHE</h4>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="barca.jpg" class="card-img-top" alt="gunkan">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">31 Barca piccola </h5>
+
+                            <p class="card-text"> 20 pezzi misti
+                                € 10,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="barca.jpg" class="card-img-top" alt="gunkam">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">32 Barca media </h5>
+
+                            <p class="card-text"> 40 pezzi misti
+                                € 20,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="barca.jpg" class="card-img-top" alt="gunkam">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">33 Barca grande </h5>
+
+                            <p class="card-text"> 100 pezzi misti
+                                € 50,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <!--PUNTO DI DIVISIONE-->
+
+            <!--SEZIONE CINQUE - RAMEN-->
+
+            <h4 class="testocentrale" id="list-item-5">RAMEN</h4>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="ramen 1.jpg" class="card-img-top" alt="gunkan">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">34 Chiken ramen </h5>
+
+                            <p class="card-text"> Uova, alghe, surimi e pollo
+
+                                € 8,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="ramen 2.jpg" class="card-img-top" alt="gunkam">
+                        <div class="card-body">
+
+                            <h5 class="card-title">35 Manzo ramen </h5>
+
+                            <p class="card-text"> Uova, alghe, surimi e manzo
+
+                                € 8,00 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--PUNTO DI DIVIONE-->
+
+            <!--SEZIONE SEI-->
+
+            <h4 class="testocentrale" id="list-item-6">DOLCI</h4>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="dolce 1.jpg" class="card-img-top" alt="antipast">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">36 COCCO E PASSION</h5>
+
+                            <p class="card-text">Mousse al cocco, cremoso al mango e passion fruit, pan di spagna e alla
+                                base frolla sablèe.
+                                € 7,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+                        <img src="dolce 2.jpg" class="card-img-top" alt="antipasti">
+                        <div class="card-body">
+
+                            <h5 class="card-title">37 Ravioli di calamari 3pz</h5>
+
+                            <p class="card-text">Sfoglia con nero di seppia
+                                € 5,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="dolce 3.jpg" class="card-img-top" alt="antipasti">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">38 PISTACCHIO</h5>
+
+                            <p class="card-text">Crema bavarese al pistacchio, gelè al lampone,pan di spagna con bagna
+                                leggera al maraschino e alla base un croccantino di cioccolato al latte.
+                                € 7,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="dolce 4.jpg" class="card-img-top" alt="antipasti">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">39 TRIS DI CIOCCOLATI</h5>
+
+                            <p class="card-text">Tre strati di mousse al cioccolato (bianco, al latte e fondente) e alla
+                                base un pan di spagna al cacao.
+                                € 7,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="dolce 5.jpg" class="card-img-top" alt="antipasti">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">40 SEDUZIONE</h5>
+
+                            <p class="card-text">
+                                Mousse al cioccolato al latte affogata in una copertura di cioccolato al latte e
+                                granella di nocciole, al suo interno una nocciola caramellata e alla base disco
+                                croccante di crumble salato.
+                                € 7,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="dolce 6.jpg" class="card-img-top" alt="antipasti">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">41 MOKA</h5>
+
+                            <p class="card-text"> Crema bavarese al caffe, cremoso al caramello e alla base croccantino
+                                al latte; copertura di cioccolato bianco e arachidi salate.
+                                € 7,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="dolce 7.jpg" class="card-img-top" alt="antipasti">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">42 Tartufo alla Nocciola</h5>
+
+                            <p class="card-text">Delizioso gelato semifreddo alla nocciola con cuore di cioccolato
+                                liquido, decorato con nocciole pralinate e meringa.
+                                € 4,50 </p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="dolce 8.jpg" class="card-img-top" alt="antipasti">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">43 Souflè al Cioccolato</h5>
+
+                            <p class="card-text">Latte intero amido di mais albumi cioccolato fondente zucchero a velo
+                                tuorli
+                                € 4,50</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <a style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</a>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="dolce 9.jpg" class="card-img-top" alt="antipasti">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">44 Mochi Misto</h5>
+
+                            <p class="card-text">Gusti misti
+                                € 4,50</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                    onclick="addToCart(this)" data-index="1">
+
+                    <img src="dolce 10.jpg" class="card-img-top" alt="antipasti">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">45 Gelato fritto</h5>
+
+                        <p class="card-text">Fragola ciocolato caffè
+                            € 4,50</p>
+
+                        <div class="counter-container" style="padding-bottom: 30px;">
+
+                            <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                            <a style="margin-left: 30px;" class="btn btn-primary" onclick="decrementCounter(this)">-</a>
+
+                            <span class="counter">0</span>
+
+                            <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--PUNTO DI DIVISIONE-->
+
+            <!--SEZIONE SETTE-->
+
+            <h4 class="testocentrale" id="list-item-7">BEVANDE</h4>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img style="height: 500px;" src="acqua.jpg" class="card-img-top" alt="antipast">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">46 Acqua</h5>
+
+                            <p class="card-text">Bottiglia da 1 L
+                                € 1,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+                        <img style="height: 500px;" src="cola.jpeg" class="card-img-top" alt="antipasti">
+                        <div class="card-body">
+
+                            <h5 class="card-title">47 Coca-cola</h5>
+
+                            <p class="card-text">bottiglia da 1 L
+                                € 2,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img style="height: 500px;" style="height: 500px;" src="aranciata.jpg" class="card-img-top"
+                            alt="antipasti">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">48 Aranciata</h5>
+
+                            <p class="card-text">Bottiglia da 1 L
+                                € 2,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="birra.jpg" class="card-img-top" alt="antipasti">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">49 Birra</h5>
+
+                            <p class="card-text">Bottiglia da 1 L
+                                € 2,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+
+                    <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                        onclick="addToCart(this)" data-index="1">
+
+                        <img src="sake.webp" class="card-img-top" alt="antipasti">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">50 Sake</h5>
+
+                            <p class="card-text"> Bottiglia da 1 L
+                            € 5,00</p>
+
+                            <div class="counter-container" style="padding-bottom: 30px;">
+
+                                <p style="margin-left: 50px;" href="#" class="btn btn-primary">AGGIUNGI AL CARELLO</p>
+
+                                <a style="margin-left: 30px;" class="btn btn-primary"
+                                    onclick="decrementCounter(this)">-</a>
+
+                                <span class="counter">0</span>
+
+                                <a class="btn btn-primary" onclick="incrementCounter(this)">+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--TOTALE-->
+
+            <h4 class="testocentrale" id="list-item-8">TOTALE</h4>
+
+            <div
+                style=" height: 1000px; justify-self: center; align-items: center; display: flex; flex-direction: row;">
+
+                <button class="carello" id="carello" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)"
+                    onclick="apparireScontrino()"
+                    style="width: 20%;height: 20%;  border: none; background-image: url(carello.jpg);  background-repeat: no-repeat, repeat; background-size: cover; margin-bottom: 600px;">CARELLO</button>
+
+
+                <div id="scontrino" class="scontrinox"
+                    style="border: solid; height: 80vh; width: 600px;  margin-left: 10px; overflow: auto; background-color: antiquewhite;">
+
+                    <center>
+                        <h3>Scontrino</h3>
+                    </center>
+                    <ul id="scontrino-list">
+
+                    </ul>
+                    <div style="flex-wrap: wrap; justify-content: center; align-items: center; display: flex;">
+                        <button onclick="calcolaTotale()" class="btn btn-primary">Calcola Totale</button> 
+
+                        <p  id="totaleArticoli">Totale: €0.00</p>
+
+                        <button onclick="cancellaVoci()" class="btn btn-danger">Cancella Voci</button>
+
+                        <button onclick="changePage('http://127.0.0.1:5500/Pagina%20pagamenti.html#')" class="btn btn-primary" style="background-color: green; margin-left: 50px;">PAGA</button>
+
+                        <button onclick="stampa()" class="btn btn-primary" style="background-color: #FFA732; margin-left: 50px;">STAMPA</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+            <script src="javascript.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

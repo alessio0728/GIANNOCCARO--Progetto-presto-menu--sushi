@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abbonamenti prezzi</title>
+
+    <link rel="stylesheet" href="prezzi.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+</head>
+
+<body class="corpo" background="gif arigato1.gif">
+
+    <!--barra di navigazione-->
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid" style="background-image: url(gif\ arigato1.gif);">
+            <a class="navbar-brand" href="#">
+                <img src="drago 1.gif" alt="Logo" width="200px" height="200px" class="d-inline-block align-text-center"
+                    style="border-radius: 30px;">
+
+                <span style=" margin-right: 10px;" class="scrittalogo">
+
+
+                    <button id="home" class="abbonamenti">HOME</button>
+
+
+                    <!--IL TITOTOLO STA TRA DUE SPAN-->DRAGON SUSHI
+
+                    <button id="info" class="info">INFO & VIDEO TUTORIAL</button></span>
+            </a>
+
+            <div style="flex-direction: row;">
+                <select class="form-select" aria-label="Default select example" id="languageSelect"
+                    onchange="saveLanguage()">
+                    <option selected>SELEZIONARE LINGUA </option>
+                    <option value="1" onclick="changePage('http://127.0.0.1:5500/men%C3%B9%20sushi.html')">ITALIANO
+                    </option>
+                    <option value="2" onclick="changePage('http://127.0.0.1:5500/men%C3%B9%20sushi.html')">INGLESE
+                    </option>
+                    <option value="3" onclick="changePage('http://127.0.0.1:5500/men%C3%B9%20sushi.html')">GIAPPONESE
+                    </option>
+                </select>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!--PARTE CENTRALE-->
+
+    <div class="contenitore" style="display: flex;
+    height: 80vh;
+    width: 80%;
+    
+    justify-items: center;
+    margin-left: 200px;">
+
+        <!--CARD SINISTRA-->
+        <div id="card" class="sinistra"
+            style="flex: 1;  flex-direction: column; display: flex;  justify-content: center; align-items: center;">
+
+            <div
+                style="display: flex; height: 90%; width: 70%; background-color: white; border-radius: 30px; background-image: url('samurai 1.avif'); background-size: cover; background-position: center;  flex-direction: column;">
+
+                <h3 style="text-align: center; padding-top: 350px; color: white;" onmouseover="enlargeCard(this)"
+                    onmouseout="shrinkCard(this)">ABBONAMENTO <br> 20 <br> INGRESSI <br>menù da 20 portate <br> bevande
+                    e dolci esclussi <br> prezzo 50 euro</h3>
+
+                <button id="abbonati" type="submit" style="margin-top: 5%; border-radius: 30px;"
+                    onclick="toggleModal()">ABBONATI</button>
+
+
+
+
+            </div>
+
+
+        </div>
+
+        <!--CARD CENTRALE-->
+
+        <div class="centro"
+            style="flex: 1;  flex-direction: column; display: flex;  justify-content: center; align-items: center;">
+
+            <div id="card" class="card"
+                style="display: flex; height: 90%; width: 70%; background-color: white; border-radius: 30px; background-image: url('samurai\ 2.jpg'); background-size: cover; background-position: center;  flex-direction: column; transition: background-image 0.5s;">
+
+                <h3 style="text-align: center; padding-top: 350px; color: white;;" onmouseover="enlargeCard(this)"
+                    onmouseout="shrinkCard(this)">ABBONAMENTO <br> 50 <br> INGRESSI <br>menù da 50 portate <br> bevande
+                    e dolci inclussi <br> prezzo 150 euro</h3>
+
+                <button id="abbonati" type="submit" style="margin-top: 5%; border-radius: 30px;"
+                    onclick="toggleModal()">ABBONATI</button>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!--CARD DESTRA-->
+
+        <div class="destra"
+            style="flex: 1; flex-direction: column; display: flex;  justify-content: center; align-items: center;">
+
+            <div
+                style="display: flex; height: 90%; width: 70%; background-color: white; border-radius: 30px; background-image: url('samurai\ 3.jpg'); background-size: cover; background-position: center;  flex-direction: column;">
+
+                <h3 style="text-align: center; padding-top: 350px; color: white;" onmouseover="enlargeCard(this)"
+                    onmouseout="shrinkCard(this)">ABBONAMENTO <br> 100 <br> INGRESSI <br>menù da 100 portate <br>
+                    bevande e dolci inclussi <br> prezzo 250 euro</h3>
+
+                <button id="abbonati" type="submit" style="margin-top: 5%; border-radius: 30px;"
+                    onclick="toggleModal()">ABBONATI</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Contenuto del div modale -->
+
+    <div class="modale">
+
+        <form id="form"
+            style="display: flex; flex-direction: column; justify-content: space-around; align-items: center; height: 80%; color: white;">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="cognome">Cognome:</label>
+            <input type="text" id="cognome" name="cognome" required>
+
+            <label for="indirizzo">Indirizzo:</label>
+            <input type="text" id="indirizzo" name="indirizzo" required>
+
+            <label for="sesso">Sesso:</label>
+            <select id="sesso" name="sesso">
+                <option value="maschio">Maschio</option>
+                <option value="femmina">Femmina</option>
+                <option value="altro">Altro</option>
+            </select>
+
+            <label for="indirizzo">Password:</label>
+            <input type="password" id="indirizzo" name="password" required>
+
+            <label for="sesso">Abbonamento:</label>
+            <select id="sesso" name="sesso">
+                <option value="maschio">20 ingrssi</option>
+                <option value="femmina">50 ingrssi</option>
+                <option value="altro">100 ingressi</option>
+            </select>
+
+            <button type="submit"
+                style="border-radius: 5px; padding: 10px 20px; background-color: green; color: white;" onclick="sempreBella()">Invia</button>
+        </form>
+
+    </div>
+
+    <!--MODALE INVIO DATI-->
+
+    <div id="datiVisualizzati" class="datiVisualizzati">
+        <img src="drago 1.gif" alt="Immagine di esempio">
+        <div id="datiContainer">
+            <p id="nome"></p>
+            <p id="cognome"></p>
+            <p id="email"></p>
+            <p id="indirizzo"></p>
+            <p id="sesso"></p>
+            <p id="abbonamento"></p>
+            <p id="password"></p>
+            
+            
+        </div>
+        <button onclick="chiudiDati()">Chiudi</button>
+    </div>
+
+
+    <!--
+
+    <h4 class="testocentrale" id="list-item-1">Prodotti</h4>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)">
+            <img src="prodotto1.jpg" class="card-img-top" alt="Prodotto 1">
+            <div class="card-body">
+                <h5 class="card-title">Prodotto 1</h5>
+                <p class="card-text">Descrizione del prodotto 1</p>
+                <p class="card-text">Prezzo: €20,00</p>
+                <div class="counter-container" style="padding-bottom: 30px;">
+                    <a style="margin-left: 50px;" href="#" class="btn btn-primary" onclick="addToCart(1, this)">AGGIUNGI AL CARRELLO</a>
+                    <a style="margin-left: 30px;" href="#" class="btn btn-primary" onclick="decrementCounter(1)">-</a>
+                    <span class="counter" id="counter-1">0</span>
+                    <a href="#" class="btn btn-primary" onclick="incrementCounter(1)">+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)">
+            <img src="prodotto2.jpg" class="card-img-top" alt="Prodotto 2">
+            <div class="card-body">
+                <h5 class="card-title">Prodotto 2</h5>
+                <p class="card-text">Descrizione del prodotto 2</p>
+                <p class="card-text">Prezzo: €30,00</p>
+                <div class="counter-container" style="padding-bottom: 30px;">
+                    <a style="margin-left: 50px;" href="#" class="btn btn-primary" onclick="addToCart(2, this)">AGGIUNGI AL CARRELLO</a>
+                    <a style="margin-left: 30px;" href="#" class="btn btn-primary" onclick="decrementCounter(2)">-</a>
+                    <span class="counter" id="counter-2">0</span>
+                    <a href="#" class="btn btn-primary" onclick="incrementCounter(2)">+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100" onmouseover="enlargeCard(this)" onmouseout="shrinkCard(this)">
+            <img src="prodotto3.jpg" class="card-img-top" alt="Prodotto 3">
+            <div class="card-body">
+                <h5 class="card-title">Prodotto 3</h5>
+                <p class="card-text">Descrizione del prodotto 3</p>
+                <p class="card-text">Prezzo: €25,00</p>
+                <div class="counter-container" style="padding-bottom: 30px;">
+                    <a style="margin-left: 50px;" href="#" class="btn btn-primary" onclick="addToCart(3, this)">AGGIUNGI AL CARRELLO</a>
+                    <a style="margin-left: 30px;" href="#" class="btn btn-primary" onclick="decrementCounter(3)">-</a>
+                    <span class="counter" id="counter-3">0</span>
+                    <a href="#" class="btn btn-primary" onclick="incrementCounter(3)">+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let counters = {};
+
+    function addToCart(productId, button) {
+        const productName = `Prodotto ${productId}`;
+        const currentValue = counters[productId] || 0;
+        console.log(`Aggiunto al carrello: ${currentValue}x ${productName}`);
+        button.style.backgroundColor = "red";
+    }
+
+    function incrementCounter(productId) {
+        counters[productId] = (counters[productId] || 0) + 1;
+        updateCounter(productId);
+    }
+
+    function decrementCounter(productId) {
+        if (counters[productId] && counters[productId] > 0) {
+            counters[productId]--;
+            updateCounter(productId);
+        }
+    }
+
+    function updateCounter(productId) {
+        const counterSpan = document.getElementById(`counter-${productId}`);
+        counterSpan.textContent = counters[productId] || 0;
+    }
+</script>
+
+-->
+
+    <script src="prezzi.js"></script>
+
+
+
+</body>
+
+</html>

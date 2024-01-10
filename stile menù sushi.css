@@ -1,0 +1,70 @@
+.corpo {
+
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+
+}
+
+.scrittalogo {
+    color: #00A9FF;
+    padding-left: 250px;
+    font-size: xx-large;
+    font-weight: 900;
+    
+}
+
+.abbonamenti{
+
+    margin-right: 100px;
+    border-radius: 30px;
+    background-color: #00A9FF;
+}
+
+.info{
+
+    margin-left: 100px;
+    border-radius: 30px;
+    background-color: #00A9FF;
+}
+
+
+
+
+.testocentrale {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 900;
+    color: blueviolet;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+}
+
+.card h-100 {
+
+    transition: transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease; /* Transizione per un cambiamento fluido del colore */
+}
+
+.card h-100 :hover {
+
+    /* Stili quando il mouse è sopra la card */
+  transform: scale(1.1); /* Ingrandisce la card del 10% */;
+
+  background-color: #00A9FF;
+}
+
+.btn btn-primary :active {
+
+    background-color: green;
+}
+
+.scontrinox {
+    display: none;
+}
+  
